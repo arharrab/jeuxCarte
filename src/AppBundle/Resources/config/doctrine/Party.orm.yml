@@ -1,0 +1,20 @@
+AppBundle\Entity\Party:
+    type: entity
+    table: party
+    repositoryClass: AppBundle\Repository\PartyRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        date:
+            type: datetime
+    lifecycleCallbacks: {  }
+    manyToOne:
+        joueur:
+            targetEntity: Joueur
+            joinColumn: 
+                name: joueur_id
+                referencedColumnName: id

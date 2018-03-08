@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Carte edit</h1>
+
+    {{ form_start(edit_form) }}
+        <div class="form-group">
+            {{ form_label(edit_form.value) }}
+            {{ form_errors(edit_form.value) }}
+        <div class="container-form-control">
+        {{ form_widget(edit_form.value) }}
+        </div>
+        {{ form_label(edit_form.categorie) }}
+            {{ form_errors(edit_form.categorie) }}
+        <div class="container-form-control">
+        {{ form_widget(edit_form.categorie) }}
+        </div>
+    </div>
+        
+          <input class="btn btn-warning" type="submit" value="Modifier" />
+        
+    {{ form_end(edit_form) }}
+    <p>
+    {{ form_start(delete_form) }}
+        <input class="btn btn-danger" type="submit" value="Supprimer"/>
+    {{ form_end(delete_form) }}
+    </p>
+
+    <ul>
+        <li>
+            <a href="{{ path('carte_index') }}">Back to the list</a>
+        </li>
+       
+    </ul>
+{% endblock %}

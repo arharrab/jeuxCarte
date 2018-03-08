@@ -1,0 +1,23 @@
+AppBundle\Entity\Carte:
+    type: entity
+    table: carte
+    repositoryClass: AppBundle\Repository\CarteRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        value:
+            type: string
+            length: '15'
+        sort:
+            type: integer
+    lifecycleCallbacks: {  }
+    manyToOne:
+        categorie:
+            targetEntity: Categorie
+            joinColumn: 
+                name: categorie_id
+                referencedColumnName: id

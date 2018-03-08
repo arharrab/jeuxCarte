@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Liste des Joueurs</h1>
+    <p class="text-right">
+        <a class="btn btn-success btn-lg" href="{{ path('joueur_new') }}"> <span class="fa fa-plus-square"></span> Ajouter joueur</a>
+    </p>
+    <table class="table table-bordered table-hover table-responsive">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for joueur in joueurs %}
+            <tr>
+                <td><a href="{{ path('joueur_show', { 'id': joueur.id }) }}">{{ joueur.id }}</a></td>
+                <td>{{ joueur.nom }}</td>
+                <td>{{ joueur.email }}</td>
+                <td>
+                    <a class="btn btn-info" href="{{ path('joueur_show', { 'id': joueur.id }) }}">Détails</a> 
+                    <a class="btn btn-warning" href="{{ path('joueur_edit', { 'id': joueur.id }) }}">Modifier</a>                    
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}

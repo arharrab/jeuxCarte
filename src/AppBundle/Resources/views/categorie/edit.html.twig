@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Categorie edit</h1>
+
+    {{ form_start(edit_form) }}
+    <div class="form-group">
+        {{ form_errors(edit_form) }}
+        <div class="container-form-control">
+        {{ form_widget(edit_form) }}
+        </div>
+    </div>
+    
+        <input class="btn btn-warning" type="submit" value="Modifier" />
+        
+    {{ form_end(edit_form) }}
+    <p>
+    {{ form_start(delete_form) }}
+        <input class="btn btn-danger" type="submit" value="Supprimer"/>
+    {{ form_end(delete_form) }}
+    </p>
+
+    <ul>
+        <li>
+            <a href="{{ path('categorie_index') }}">Back to the list</a>
+        </li>
+        
+    </ul>
+{% endblock %}

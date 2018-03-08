@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Categorie list</h1>
+    
+    <p class="text-right">
+        <a class="btn btn-success btn-lg" href="{{ path('categorie_new') }}"> <span class="fa fa-plus-square"></span> Ajouter catégorie</a>
+    </p>
+
+    <table class="table table-bordered table-hover table-responsive">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Category</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for categorie in categories %}
+            <tr>
+                <td><a href="{{ path('categorie_show', { 'id': categorie.id }) }}">{{ categorie.id }}</a></td>
+                <td>{{ categorie.category }}</td>
+                <td>
+                    <a class="btn btn-info" href="{{ path('categorie_show', { 'id': categorie.id }) }}">Détails</a> 
+                    <a class="btn btn-warning" href="{{ path('categorie_edit', { 'id': categorie.id }) }}">Modifier</a>                    
+                    
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+   
+{% endblock %}

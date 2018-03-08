@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    
+    
+    <h1>Carte list</h1>
+        <p class="text-right">
+            <a class="btn btn-success btn-lg" href="{{ path('carte_new') }}"> <span class="fa fa-plus-square"></span> Ajouter carte</a>
+        </p>
+    <table class="table table-bordered table-hover table-responsive">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Value</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for carte in cartes %}
+            <tr>
+                <td><a href="{{ path('carte_show', { 'id': carte.id }) }}">{{ carte.id }}</a></td>
+                <td>{{ carte.value }}</td>
+                <td>
+                    <a class="btn btn-info" href="{{ path('carte_show', { 'id': carte.id }) }}">Détails</a> 
+                    <a class="btn btn-warning" href="{{ path('carte_edit', { 'id': carte.id }) }}">Modifier</a>                    
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

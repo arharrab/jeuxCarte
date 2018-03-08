@@ -1,0 +1,23 @@
+AppBundle\Entity\Joueur:
+    type: entity
+    table: joueur
+    repositoryClass: AppBundle\Repository\JoueurRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: 255
+        email:
+            type: string
+            length: '120'
+            unique: true
+        password:
+            type: string
+            length: '120'
+            unique: false
+    lifecycleCallbacks: {  }

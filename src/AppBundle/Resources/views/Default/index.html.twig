@@ -1,0 +1,15 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}     
+<div class="container">
+    <div class="jumbotron">
+        <h1>Bienvenu sur notre jeux de cartes</h1>
+        <p>Vous devez demander une main qui vous sera selectionnée aléatoirement</p>
+        <p>
+            <a class="btn btn-primary btn-lg" href="{{ path('party_new_hand', {'joueur': JoueurID}) }}"> 
+                <span class="fa fa-exchange"></span> Nouvelle Partie </a>
+        </p>
+    </div>
+</div>
+
+{% endblock %}

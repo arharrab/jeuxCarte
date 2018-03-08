@@ -1,0 +1,67 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}   
+    
+    <p>
+        <a id="validate_hand" class="btn btn-primary btn-lg" href="#"> 
+            <span class="fa fa-exchange"></span> Envoyer cette main 
+        </a>
+    </p>
+    
+    <script>
+        $(document).ready(function() {
+           
+            $(" #validate_hand ").one( "click", function() {
+
+                $.ajax({
+                    type: "POST",
+                    dataType : "text",
+                    contentType: "text/plain",
+                    data: '{{ jsonData | json_encode()}}'.replace(/&quot;/g, '\''),
+                    url: 'https://recrutement.local-trust.com/test/5aa158e0975a0c0e5ee75671',
+                    success: function (data, textStatus, xhr) {
+                        alert(xhr.status);
+                    },
+                    complete: function(xhr, textStatus) {
+                        alert(xhr.status);
+                    } 
+                });
+            });
+
+        });
+    </script>
+    
+    
+    {% set col_counter = 0 %}
+
+    {% for carte in main %}
+        {% if col_counter==5 %}
+            {% set col_counter = 0 %}
+        {% endif %}
+        {% if col_counter==0 %}
+            <div class="row">
+        {% endif %}
+                
+        <div class="col-lg-2">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    {{carte.category | upper}}
+                    <img class="img-responsive" src="{{ asset('assets/img/' ~ carte.category | lower ~ '.jpg') }}" alt="{{carte.category}}"/>
+                </div>
+                <div class="panel-footer text-bold text-center">{{carte.value}}</div>
+            </div>
+        </div>
+        
+        {% set col_counter = col_counter + 1 %}
+        {% if col_counter==5 %}
+            </div>      
+        {% endif %}
+        
+        
+        
+        
+    {% endfor %}
+    {{ jsonData|json_encode()}}
+    
+{% endblock %}
+

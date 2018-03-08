@@ -1,0 +1,86 @@
+joueur_index:
+    path:     /joueur
+    defaults: { _controller: AppBundle:Joueur:index }
+
+joueur_show:
+    path:     /joueur/{id}/show
+    defaults: { _controller: AppBundle:Joueur:show }
+
+joueur_new:
+    path:     /joueur/new
+    defaults: { _controller: AppBundle:Joueur:new }
+    methods:  [GET, POST]
+
+joueur_edit:
+    path:     /joueur/{id}/edit
+    defaults: { _controller: AppBundle:Joueur:edit }
+    methods:  [GET, POST]
+
+joueur_delete:
+    path:     /joueur/{id}/delete
+    defaults: { _controller: AppBundle:Joueur:delete }
+    methods:  DELETE
+
+party_home:
+    path:     /party
+    defaults: { _controller: AppBundle:Party:index }
+    
+party_new_hand:
+    path:     /party/new-hand/{joueur}
+    defaults: { _controller: AppBundle:Party:getHand }
+    requirements:
+        joueur: '\d+'
+    
+party_send_hand:
+    path:     /party/send-hand/
+    defaults: { _controller: AppBundle:Party:sendHand }
+    
+categorie_index:
+    path:     /category
+    defaults: { _controller: AppBundle:Categorie:index }
+    methods:  GET
+
+categorie_show:
+    path:     /category/{id}/show
+    defaults: { _controller: AppBundle:Categorie:show }
+    methods:  GET
+
+categorie_new:
+    path:     /category/new
+    defaults: { _controller: AppBundle:Categorie:new }
+    methods:  [GET, POST]
+
+categorie_edit:
+    path:     /category/{id}/edit
+    defaults: { _controller: AppBundle:Categorie:edit }
+    methods:  [GET, POST]
+
+categorie_delete:
+    path:     /category/{id}/delete
+    defaults: { _controller: AppBundle:Categorie:delete }
+    methods:  DELETE
+    
+carte_index:
+    path:     /carte
+    defaults: { _controller: AppBundle:Carte:index }
+    methods:  GET
+
+carte_show:
+    path:     /carte/{id}/show
+    defaults: { _controller: AppBundle:Carte:show }
+    methods:  GET
+
+carte_new:
+    path:     /carte/new
+    defaults: { _controller: AppBundle:Carte:new }
+    methods:  [GET, POST]
+
+carte_edit:
+    path:     /carte/{id}/edit
+    defaults: { _controller: AppBundle:Carte:edit }
+    methods:  [GET, POST]
+
+carte_delete:
+    path:     /carte/{id}/delete
+    defaults: { _controller: AppBundle:Carte:delete }
+    methods:  DELETE

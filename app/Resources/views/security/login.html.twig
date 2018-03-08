@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}" />
+            <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bs-theme.css') }}" />
+            <link rel="stylesheet" type="text/css" href="{{ asset('assets/font-awesome/css/font-awesome.min.css') }}" />
+            <script type="text/javascript" src="{{ asset('assets/js/jquery.min.js') }}"></script>
+        {% endblock %}
+
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body> 
+     
+        <div class="container">
+{% block body %}
+    <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info" >
+                    <div class="panel-heading">
+                        <div class="panel-title">Authentification</div>                        
+                    </div>     
+
+                    <div style="padding-top:30px" class="panel-body" >
+                            {% if error %}
+                                <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                            {% endif %}
+
+                            <form action="{{ path('login') }}" method="post" class="form-horizontal" role="form">
+                                <div style="margin-bottom: 25px" class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <input id="useremail" class="form-control" type="email" id="useremail" name="useremail" value="{{ last_useremail }}" placeholder="Votre email">                                        
+                                    </div>
+                                
+                            <div style="margin-bottom: 25px" class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                        <input id="password" type="password" class="form-control" name="password" placeholder="password">
+                                    </div>
+                                
+                                
+                                <div class="col-sm-12 controls">
+                                
+                                <button type="submit" class="btn btn-success">login</button> 
+                                <input type="reset" class="btn btn-warning" value="Annuler" />
+                                </div>
+                            </form>
+                    </div>                     
+                </div>
+    </div>
+{% endblock %}
+        </div>
+        {% block javascripts %}
+            <script type="text/javascript" src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>
