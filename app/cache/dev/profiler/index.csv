@@ -768,3 +768,6 @@ eab4bc,::1,GET,http://localhost/jeuxCarte/web/app_dev.php/party/new-hand/1,15205
 4e5b81,::1,GET,http://localhost/jeuxCarte/web/app_dev.php/party/new-hand/1,1520525544,,200
 430893,::1,GET,http://localhost/jeuxCarte/web/app_dev.php/party/new-hand/1,1520525733,,200
 c0f805,::1,GET,http://localhost/jeuxCarte/web/app_dev.php/party/new-hand/1,1520525837,,200
+c1b50c,::1,GET,http://localhost/jeuxCarte/web/app_dev.php/joueur/new,1520529517,,200
+801e34,::1,GET,http://localhost/jeuxCarte/web/app_dev.php/party,1520529598,,200
+fabefb,::1,GET,http://localhost/jeuxCarte/web/app_dev.php/party/new-hand/1,1520529601,,200
