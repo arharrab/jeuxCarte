@@ -771,3 +771,14 @@ c0f805,::1,GET,http://localhost/jeuxCarte/web/app_dev.php/party/new-hand/1,15205
 c1b50c,::1,GET,http://localhost/jeuxCarte/web/app_dev.php/joueur/new,1520529517,,200
 801e34,::1,GET,http://localhost/jeuxCarte/web/app_dev.php/party,1520529598,,200
 fabefb,::1,GET,http://localhost/jeuxCarte/web/app_dev.php/party/new-hand/1,1520529601,,200
+f4d711,::1,GET,http://localhost/jeuxCarte/web/app_dev.php/logout,1520529800,,200
+fe7368,::1,GET,http://localhost/jeuxCarte/web/app_dev.php/party/new-hand/1,1520529828,,200
+27f4ee,::1,GET,http://localhost/jeuxCarte/web/app_dev.php/logout,1520529838,,200
+491cc6,::1,GET,http://localhost/jeuxCarte/web/app_dev.php/,1520529846,,200
+e1b9d3,::1,GET,http://localhost/jeuxCarte/web/app_dev.php/party/,1520529852,7c7c87,200
+7c7c87,::1,GET,http://localhost/jeuxCarte/web/app_dev.php/party/,1520529853,,404
+960793,::1,GET,http://localhost/jeuxCarte/web/app_dev.php/party/new/,1520529871,f49308,200
+f49308,::1,GET,http://localhost/jeuxCarte/web/app_dev.php/party/new/,1520529871,,404
+909efb,::1,GET,http://localhost/jeuxCarte/web/app_dev.php/carte,1520529887,,200
+cef29f,::1,GET,http://localhost/jeuxCarte/web/app_dev.php/party,1520529892,2de57d,200
+2de57d,::1,GET,http://localhost/jeuxCarte/web/app_dev.php/party,1520529892,,500
