@@ -21,20 +21,20 @@ class __TwigTemplate_5c831e120f64b65529a016f6f27196a9057454fe46794ce15927bc6ae65
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_f39860dde3981b69f54cb8fc391c91e69f39b72f398dd45ca4e38a4da361c219 = $this->env->getExtension("native_profiler");
-        $__internal_f39860dde3981b69f54cb8fc391c91e69f39b72f398dd45ca4e38a4da361c219->enter($__internal_f39860dde3981b69f54cb8fc391c91e69f39b72f398dd45ca4e38a4da361c219_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppBundle:Default:main.html.twig"));
+        $__internal_e6b540d66de74e7a424c1537dc5e63239cc544177f9a8f6c3d39304ecca7daa5 = $this->env->getExtension("native_profiler");
+        $__internal_e6b540d66de74e7a424c1537dc5e63239cc544177f9a8f6c3d39304ecca7daa5->enter($__internal_e6b540d66de74e7a424c1537dc5e63239cc544177f9a8f6c3d39304ecca7daa5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppBundle:Default:main.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_f39860dde3981b69f54cb8fc391c91e69f39b72f398dd45ca4e38a4da361c219->leave($__internal_f39860dde3981b69f54cb8fc391c91e69f39b72f398dd45ca4e38a4da361c219_prof);
+        $__internal_e6b540d66de74e7a424c1537dc5e63239cc544177f9a8f6c3d39304ecca7daa5->leave($__internal_e6b540d66de74e7a424c1537dc5e63239cc544177f9a8f6c3d39304ecca7daa5_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_49b10a6a6d3cfa08fd252b825cbde27144d362a40ac23e2afceff427c2e149a7 = $this->env->getExtension("native_profiler");
-        $__internal_49b10a6a6d3cfa08fd252b825cbde27144d362a40ac23e2afceff427c2e149a7->enter($__internal_49b10a6a6d3cfa08fd252b825cbde27144d362a40ac23e2afceff427c2e149a7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_319de69c198b31c7180669f75cfae34226ff76c2f5a7747471399b2972fd039d = $this->env->getExtension("native_profiler");
+        $__internal_319de69c198b31c7180669f75cfae34226ff76c2f5a7747471399b2972fd039d->enter($__internal_319de69c198b31c7180669f75cfae34226ff76c2f5a7747471399b2972fd039d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         echo "   
     
@@ -64,7 +64,7 @@ class __TwigTemplate_5c831e120f64b65529a016f6f27196a9057454fe46794ce15927bc6ae65
                             dataType : \"text\",
                             contentType: \"text/plain\",
                             data: data,
-                            url: 'https://recrutement.local-trust.com/test/5aa158e0975a0c0e5ee75671',
+                            url: 'https://recrutement.local-trust.com/test/cards/57187b7c975adeb8520a283c',
                             success: function (data, textStatus, xhr) {
                               alert(xhr.status);
                             },
@@ -159,7 +159,7 @@ class __TwigTemplate_5c831e120f64b65529a016f6f27196a9057454fe46794ce15927bc6ae65
     
 ";
         
-        $__internal_49b10a6a6d3cfa08fd252b825cbde27144d362a40ac23e2afceff427c2e149a7->leave($__internal_49b10a6a6d3cfa08fd252b825cbde27144d362a40ac23e2afceff427c2e149a7_prof);
+        $__internal_319de69c198b31c7180669f75cfae34226ff76c2f5a7747471399b2972fd039d->leave($__internal_319de69c198b31c7180669f75cfae34226ff76c2f5a7747471399b2972fd039d_prof);
 
     }
 
@@ -205,7 +205,7 @@ class __TwigTemplate_5c831e120f64b65529a016f6f27196a9057454fe46794ce15927bc6ae65
 /*                             dataType : "text",*/
 /*                             contentType: "text/plain",*/
 /*                             data: data,*/
-/*                             url: 'https://recrutement.local-trust.com/test/5aa158e0975a0c0e5ee75671',*/
+/*                             url: 'https://recrutement.local-trust.com/test/cards/57187b7c975adeb8520a283c',*/
 /*                             success: function (data, textStatus, xhr) {*/
 /*                               alert(xhr.status);*/
 /*                             },*/
