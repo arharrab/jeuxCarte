@@ -180,6 +180,15 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'AppBundle\\Controller\\PartyController::sendHandAction',  '_route' => 'party_send_hand',);
             }
 
+            // party_get_hand
+            if (rtrim($pathinfo, '/') === '/party/get-hand') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'party_get_hand');
+                }
+
+                return array (  '_controller' => 'AppBundle\\Controller\\PartyController::getHandJsonAction',  '_route' => 'party_get_hand',);
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/ca')) {

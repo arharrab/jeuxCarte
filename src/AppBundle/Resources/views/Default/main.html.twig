@@ -14,16 +14,28 @@
             $(" #validate_hand ").one( "click", function() {
 
                 $.ajax({
-                    type: "POST",
+                    type: "GET",
                     dataType : "text",
                     contentType: "text/plain",
-                    data: '{{ jsonData | json_encode()}}'.replace(/&quot;/g, '\''),
-                    url: 'https://recrutement.local-trust.com/test/5aa158e0975a0c0e5ee75671',
-                    success: function (data, textStatus, xhr) {
-                        alert(xhr.status);
+                    url: '{{ path('party_get_hand') }}',
+                    success: function (data) {
+                        alert(data);
+                        $.ajax({
+                            type: "POST",
+                            dataType : "text",
+                            contentType: "text/plain",
+                            data: data,
+                            url: 'https://recrutement.local-trust.com/test/5aa158e0975a0c0e5ee75671',
+                            success: function (data, textStatus, xhr) {
+                              alert(xhr.status);
+                            },
+                            complete: function(xhr, textStatus) {
+                                alert(xhr.status);
+                            } 
+                        });
                     },
                     complete: function(xhr, textStatus) {
-                        alert(xhr.status);
+                        //alert(xhr.status);
                     } 
                 });
             });

@@ -21,20 +21,20 @@ class __TwigTemplate_5c831e120f64b65529a016f6f27196a9057454fe46794ce15927bc6ae65
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_fc0e9bd27ab0d0fbb3ddeb791e16e376dcfce861c4697a6216bdef9d0ad35ce2 = $this->env->getExtension("native_profiler");
-        $__internal_fc0e9bd27ab0d0fbb3ddeb791e16e376dcfce861c4697a6216bdef9d0ad35ce2->enter($__internal_fc0e9bd27ab0d0fbb3ddeb791e16e376dcfce861c4697a6216bdef9d0ad35ce2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppBundle:Default:main.html.twig"));
+        $__internal_f39860dde3981b69f54cb8fc391c91e69f39b72f398dd45ca4e38a4da361c219 = $this->env->getExtension("native_profiler");
+        $__internal_f39860dde3981b69f54cb8fc391c91e69f39b72f398dd45ca4e38a4da361c219->enter($__internal_f39860dde3981b69f54cb8fc391c91e69f39b72f398dd45ca4e38a4da361c219_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppBundle:Default:main.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_fc0e9bd27ab0d0fbb3ddeb791e16e376dcfce861c4697a6216bdef9d0ad35ce2->leave($__internal_fc0e9bd27ab0d0fbb3ddeb791e16e376dcfce861c4697a6216bdef9d0ad35ce2_prof);
+        $__internal_f39860dde3981b69f54cb8fc391c91e69f39b72f398dd45ca4e38a4da361c219->leave($__internal_f39860dde3981b69f54cb8fc391c91e69f39b72f398dd45ca4e38a4da361c219_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_51438fbc892e2dc63723d31cf3b1d48f524645c065996b19504f4ddf0f1d864f = $this->env->getExtension("native_profiler");
-        $__internal_51438fbc892e2dc63723d31cf3b1d48f524645c065996b19504f4ddf0f1d864f->enter($__internal_51438fbc892e2dc63723d31cf3b1d48f524645c065996b19504f4ddf0f1d864f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_49b10a6a6d3cfa08fd252b825cbde27144d362a40ac23e2afceff427c2e149a7 = $this->env->getExtension("native_profiler");
+        $__internal_49b10a6a6d3cfa08fd252b825cbde27144d362a40ac23e2afceff427c2e149a7->enter($__internal_49b10a6a6d3cfa08fd252b825cbde27144d362a40ac23e2afceff427c2e149a7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         echo "   
     
@@ -50,19 +50,31 @@ class __TwigTemplate_5c831e120f64b65529a016f6f27196a9057454fe46794ce15927bc6ae65
             \$(\" #validate_hand \").one( \"click\", function() {
 
                 \$.ajax({
-                    type: \"POST\",
+                    type: \"GET\",
                     dataType : \"text\",
                     contentType: \"text/plain\",
-                    data: '";
+                    url: '";
         // line 20
-        echo twig_escape_filter($this->env, twig_jsonencode_filter((isset($context["jsonData"]) ? $context["jsonData"] : $this->getContext($context, "jsonData"))), "html", null, true);
-        echo "'.replace(/&quot;/g, '\\''),
-                    url: 'https://recrutement.local-trust.com/test/5aa158e0975a0c0e5ee75671',
-                    success: function (data, textStatus, xhr) {
-                        alert(xhr.status);
+        echo $this->env->getExtension('routing')->getPath("party_get_hand");
+        echo "',
+                    success: function (data) {
+                        alert(data);
+                        \$.ajax({
+                            type: \"POST\",
+                            dataType : \"text\",
+                            contentType: \"text/plain\",
+                            data: data,
+                            url: 'https://recrutement.local-trust.com/test/5aa158e0975a0c0e5ee75671',
+                            success: function (data, textStatus, xhr) {
+                              alert(xhr.status);
+                            },
+                            complete: function(xhr, textStatus) {
+                                alert(xhr.status);
+                            } 
+                        });
                     },
                     complete: function(xhr, textStatus) {
-                        alert(xhr.status);
+                        //alert(xhr.status);
                     } 
                 });
             });
@@ -72,65 +84,65 @@ class __TwigTemplate_5c831e120f64b65529a016f6f27196a9057454fe46794ce15927bc6ae65
     
     
     ";
-        // line 35
+        // line 47
         $context["col_counter"] = 0;
-        // line 36
+        // line 48
         echo "
     ";
-        // line 37
+        // line 49
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["main"]) ? $context["main"] : $this->getContext($context, "main")));
         foreach ($context['_seq'] as $context["_key"] => $context["carte"]) {
-            // line 38
+            // line 50
             echo "        ";
             if (((isset($context["col_counter"]) ? $context["col_counter"] : $this->getContext($context, "col_counter")) == 5)) {
-                // line 39
+                // line 51
                 echo "            ";
                 $context["col_counter"] = 0;
-                // line 40
+                // line 52
                 echo "        ";
             }
-            // line 41
+            // line 53
             echo "        ";
             if (((isset($context["col_counter"]) ? $context["col_counter"] : $this->getContext($context, "col_counter")) == 0)) {
-                // line 42
+                // line 54
                 echo "            <div class=\"row\">
         ";
             }
-            // line 44
+            // line 56
             echo "                
         <div class=\"col-lg-2\">
             <div class=\"panel panel-default\">
                 <div class=\"panel-body\">
                     ";
-            // line 48
+            // line 60
             echo twig_escape_filter($this->env, twig_upper_filter($this->env, $this->getAttribute($context["carte"], "category", array())), "html", null, true);
             echo "
                     <img class=\"img-responsive\" src=\"";
-            // line 49
+            // line 61
             echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl((("assets/img/" . twig_lower_filter($this->env, $this->getAttribute($context["carte"], "category", array()))) . ".jpg")), "html", null, true);
             echo "\" alt=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($context["carte"], "category", array()), "html", null, true);
             echo "\"/>
                 </div>
                 <div class=\"panel-footer text-bold text-center\">";
-            // line 51
+            // line 63
             echo twig_escape_filter($this->env, $this->getAttribute($context["carte"], "value", array()), "html", null, true);
             echo "</div>
             </div>
         </div>
         
         ";
-            // line 55
+            // line 67
             $context["col_counter"] = ((isset($context["col_counter"]) ? $context["col_counter"] : $this->getContext($context, "col_counter")) + 1);
-            // line 56
+            // line 68
             echo "        ";
             if (((isset($context["col_counter"]) ? $context["col_counter"] : $this->getContext($context, "col_counter")) == 5)) {
-                // line 57
+                // line 69
                 echo "            </div>      
         ";
             }
-            // line 59
+            // line 71
             echo "        
         
         
@@ -140,14 +152,14 @@ class __TwigTemplate_5c831e120f64b65529a016f6f27196a9057454fe46794ce15927bc6ae65
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['carte'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 64
+        // line 76
         echo "    ";
         echo twig_escape_filter($this->env, twig_jsonencode_filter((isset($context["jsonData"]) ? $context["jsonData"] : $this->getContext($context, "jsonData"))), "html", null, true);
         echo "
     
 ";
         
-        $__internal_51438fbc892e2dc63723d31cf3b1d48f524645c065996b19504f4ddf0f1d864f->leave($__internal_51438fbc892e2dc63723d31cf3b1d48f524645c065996b19504f4ddf0f1d864f_prof);
+        $__internal_49b10a6a6d3cfa08fd252b825cbde27144d362a40ac23e2afceff427c2e149a7->leave($__internal_49b10a6a6d3cfa08fd252b825cbde27144d362a40ac23e2afceff427c2e149a7_prof);
 
     }
 
@@ -163,7 +175,7 @@ class __TwigTemplate_5c831e120f64b65529a016f6f27196a9057454fe46794ce15927bc6ae65
 
     public function getDebugInfo()
     {
-        return array (  144 => 64,  134 => 59,  130 => 57,  127 => 56,  125 => 55,  118 => 51,  111 => 49,  107 => 48,  101 => 44,  97 => 42,  94 => 41,  91 => 40,  88 => 39,  85 => 38,  81 => 37,  78 => 36,  76 => 35,  58 => 20,  34 => 3,  11 => 1,);
+        return array (  156 => 76,  146 => 71,  142 => 69,  139 => 68,  137 => 67,  130 => 63,  123 => 61,  119 => 60,  113 => 56,  109 => 54,  106 => 53,  103 => 52,  100 => 51,  97 => 50,  93 => 49,  90 => 48,  88 => 47,  58 => 20,  34 => 3,  11 => 1,);
     }
 }
 /* {% extends '::base.html.twig' %}*/
@@ -182,16 +194,28 @@ class __TwigTemplate_5c831e120f64b65529a016f6f27196a9057454fe46794ce15927bc6ae65
 /*             $(" #validate_hand ").one( "click", function() {*/
 /* */
 /*                 $.ajax({*/
-/*                     type: "POST",*/
+/*                     type: "GET",*/
 /*                     dataType : "text",*/
 /*                     contentType: "text/plain",*/
-/*                     data: '{{ jsonData | json_encode()}}'.replace(/&quot;/g, '\''),*/
-/*                     url: 'https://recrutement.local-trust.com/test/5aa158e0975a0c0e5ee75671',*/
-/*                     success: function (data, textStatus, xhr) {*/
-/*                         alert(xhr.status);*/
+/*                     url: '{{ path('party_get_hand') }}',*/
+/*                     success: function (data) {*/
+/*                         alert(data);*/
+/*                         $.ajax({*/
+/*                             type: "POST",*/
+/*                             dataType : "text",*/
+/*                             contentType: "text/plain",*/
+/*                             data: data,*/
+/*                             url: 'https://recrutement.local-trust.com/test/5aa158e0975a0c0e5ee75671',*/
+/*                             success: function (data, textStatus, xhr) {*/
+/*                               alert(xhr.status);*/
+/*                             },*/
+/*                             complete: function(xhr, textStatus) {*/
+/*                                 alert(xhr.status);*/
+/*                             } */
+/*                         });*/
 /*                     },*/
 /*                     complete: function(xhr, textStatus) {*/
-/*                         alert(xhr.status);*/
+/*                         //alert(xhr.status);*/
 /*                     } */
 /*                 });*/
 /*             });*/

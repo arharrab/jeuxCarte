@@ -35,6 +35,10 @@ party_send_hand:
     path:     /party/send-hand/
     defaults: { _controller: AppBundle:Party:sendHand }
     
+party_get_hand:
+    path:     /party/get-hand/
+    defaults: { _controller: AppBundle:Party:getHandJson }
+    
 categorie_index:
     path:     /category
     defaults: { _controller: AppBundle:Categorie:index }

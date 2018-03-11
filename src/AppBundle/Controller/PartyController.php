@@ -9,6 +9,7 @@ use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 
 
@@ -47,7 +48,7 @@ class PartyController extends Controller
         if(!$session->get('main')){
             $em = $this->getDoctrine()->getManager();
 
-            $stmt = $em->getConnection()->prepare("SELECT c.category,c.value FROM (SELECT b.category, a.value, a.sort  FROM carte AS a INNER JOIN categorie AS b ON a.categorie_id=b.id  order by RAND() LIMIT 10) AS c ORDER BY c.category, c.sort");
+            $stmt = $em->getConnection()->prepare("SELECT c.category, c.value FROM (SELECT b.category, b.id, a.value, a.sort  FROM carte AS a INNER JOIN categorie AS b ON a.categorie_id=b.id  order by RAND() LIMIT 10) AS c ORDER BY c.id, c.sort");
             $stmt->execute();
             $randcarte = $stmt->fetchAll();
              
@@ -64,28 +65,41 @@ class PartyController extends Controller
                 array_push($values, $value);
              }
             
+             
+            $order=["ACE","TWO","THREE","FOUR","FIVE","SIX","SEVEN","EIGHT","NINE","TEN","JACK","QUEEN","KING"]; 
             
-            
+            usort($values, function($a, $b) use ($order){
+                
+                $valA = array_search($a, $order);
+                $valB = array_search($b, $order);
+
+                
+                if ($valA === false)
+                    return -1;
+                if ($valB === false)
+                    return 0;
+
+                if ($valA > $valB)
+                    return 1;
+                if ($valA < $valB)
+                    return -1;
+                return 0;
+            });
 
             $session->set('main', $randcarte);
             $session->set('category', $category);
             $session->set('value', $values);
-            $jsonData = [
-                        'cards' => $randcarte,
-                        'categoryOrder' => $category,
-                        'valueOrder' => $values,
-                        'player' => $JoueurID                            
-                        ];
-            $jsonContent = $serializer->serialize($jsonData, 'json');
             
-//            $jsonData = new JsonResponse([
-//                            'cards' => $randcarte,
-//                            'categoryOrder' => $category,
-//                            'valueOrder' => $values,
-//                            'player' => $JoueurID
-//                            
-//                    ]);
-            $session->set('jsonData', $jsonContent);
+            $jsonData = json_encode(array(
+                            'cards' => $randcarte,
+                            'categoryOrder' => $category,
+                            'valueOrder' => $values,
+                            'player' => $JoueurID
+                            
+                    ));
+            
+
+            $session->set('jsonData', $jsonData);
             
             
         }else{
@@ -96,12 +110,11 @@ class PartyController extends Controller
         return $this->render("AppBundle:Default:main.html.twig",array('main'=>$randcarte, 'jsonData'=>[
                         'cards' => $randcarte,
                         'categoryOrder' => $category,
-                        'valueOrder' => $values,
-                        'player' => $JoueurID                            
+                        'valueOrder' => $values                          
                         ]));
     }
     
-    public function sendHandAction(Request $request)
+    public function getHandJsonAction(Request $request)
     {
         
         
@@ -114,24 +127,14 @@ class PartyController extends Controller
             $categoryOrder =  $session->get('category');
             $valueOrder =  $session->get('value');
             
-            $jsonData = json_decode(array(
+            $response = new JsonResponse(array(
                             'cards' => $main_carte,
                             'categoryOrder' => $categoryOrder,
-                            'valueOrder' => $valueOrder,
-                            'player' => $JoueurID
+                            'valueOrder' => $valueOrder
                             
                     ));
-            
-            
-            
-            $response = new Response($jsonData);
-        $response->headers->set('Content-Type', 'text/plain');
-        $response->headers->set('Access-Control-Allow-Origin', '*');
-        $response->setCharset('US-ASCII');
-        $response->setContent($response);
-        
-            
-       echo $response;
-            //$this->render("AppBundle:Default:resultat.html.twig",array('jsonData'=>$jsonData));
+
+        return $response;
+          
     }
 }
